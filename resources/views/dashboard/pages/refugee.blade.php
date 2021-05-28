@@ -20,8 +20,8 @@
                             <th scope="col">shweny nishtaje peshu</th>
                             <th scope="col">zhmaray mnall</th>
                             <th scope="col">baryxezan</th>
-                            <th scope="col">pisha</th>
                             <th scope="col">din</th>
+                            <th scope="col">pisha</th>
                             <th scope="col">zanyarytr</th>
                             <th scope="col">Nawxo</th>
                             <th scope="col">Action</th>

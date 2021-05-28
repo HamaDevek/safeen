@@ -104,7 +104,7 @@
                             </label>
                         </div>
                         <div class="form-group">
-                            <label for="exampleFormControlFile1">Document</label>
+                            <label for="exampleFormControlFile1">Head Family ID</label>
                             <input type="file" class="form-control-file" id="exampleFormControlFile1" name="document">
                         </div>
                         <div class="s-12"><button class="s-12 submit-form button background-primary text-white"

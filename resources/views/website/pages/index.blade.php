@@ -100,11 +100,11 @@
 <hr class="break margin-top-bottom-0">
 
 <section class="section-top-padding full-width">
-    <h2 class="text-size-50 text-center">Our Teams</h2>
+    <h2 class="text-size-50 text-center">Our Offices</h2>
     <hr class="break-small background-primary break-center">
     <div class="tabs background-primary-hightlight">
         <div class="tab-item tab-active">
-            <a class="tab-label active-btn">Teams</a>
+            <a class="tab-label active-btn">Office</a>
             <div class="tab-content lightbox-gallery">
                 @foreach ($location as $item)
                 <div class="s-12 m-6 l-3">
