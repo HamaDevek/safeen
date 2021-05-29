@@ -46,6 +46,7 @@ class UserCustemController extends Controller
         $insert->email =  $request->email;
         $insert->name =  $request->name;
         $insert->password =  Hash::make($request->password);
+        $insert->created_by =  auth()->id();
         $insert->save();
 
         return redirect()->back()->withSuccess('Added User Successfully !');
