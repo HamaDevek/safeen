@@ -51,7 +51,7 @@
     <div class="col">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Add New User</h5>
+                <h5 class="card-title">Add New Admin</h5>
                 @include('dashboard.layout.message')
                 <form action="{{route('user.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
