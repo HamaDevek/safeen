@@ -4,7 +4,7 @@
             Main
         </li>
         <li>
-            <a href="{{route('home.index')}}"><i data-feather="home"></i>Dashboard</a>
+            <a href="{{route('home.index')}}"><i data-feather="home"></i>New Refugee</a>
         </li>
         <li>
             <a href="{{route('ourteam.index')}}"><i data-feather="users"></i>Our Team</a>
