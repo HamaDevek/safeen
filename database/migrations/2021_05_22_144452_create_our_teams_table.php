@@ -19,6 +19,8 @@ class CreateOurTeamsTable extends Migration
             $table->string('position');
             $table->string('email');
             $table->string('image');
+            $table->unsignedBigInteger('created_by');
+            $table->foreign('created_by')->references('id')->on('users');
             $table->timestamps();
         });
     }

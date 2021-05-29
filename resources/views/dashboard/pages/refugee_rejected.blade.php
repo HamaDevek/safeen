@@ -2,6 +2,7 @@
 @section('content')
 
 @isset($data)
+@include('dashboard.layout.message')
 
 <div class="row">
     <div class="col">

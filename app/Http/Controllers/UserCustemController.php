@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\OurTeam;
+use App\User;
+use App\UserCustem;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
-class OurTeamController extends Controller
+class UserCustemController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +16,7 @@ class OurTeamController extends Controller
      */
     public function index()
     {
-
-        return view('dashboard.pages.ourteam')->with(['data' =>  OurTeam::all()]);
+        return view('dashboard.pages.user')->with(['data' =>   User::where('id', '!=', auth()->id())->where('id', '!=', 1)->get()]);
     }
 
     /**
@@ -38,28 +39,25 @@ class OurTeamController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|string|max:255|email',
-            'position' => 'required|string|max:255',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:8192',
+            'email' => 'required|string|max:255|email|unique:users,email',
+            'password' => 'required|string|max:255|confirmed|min:8',
         ]);
-        $insert = new OurTeam;
+        $insert = new User;
         $insert->email =  $request->email;
         $insert->name =  $request->name;
-        $insert->position =  $request->position;
-        $insert->image =  $request->image->store('uploads', 'public');
-        $insert->created_by =  auth()->id();
+        $insert->password =  Hash::make($request->password);
         $insert->save();
 
-        return redirect()->back()->withSuccess('Added Member Successfully !');
+        return redirect()->back()->withSuccess('Added User Successfully !');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\OurTeam  $ourTeam
+     * @param  \App\UserCustem  $userCustem
      * @return \Illuminate\Http\Response
      */
-    public function show(OurTeam $ourTeam)
+    public function show(UserCustem $userCustem)
     {
         //
     }
@@ -67,49 +65,47 @@ class OurTeamController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\OurTeam  $ourTeam
+     * @param  \App\UserCustem  $userCustem
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        return view('dashboard.pages.ourteam')->with(['single' =>  OurTeam::findOrFail($id)]);
+        return view('dashboard.pages.user')->with(['single' =>  User::findOrFail($id)]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\OurTeam  $ourTeam
+     * @param  \App\UserCustem  $userCustem
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request,  $id)
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|string|max:255|email',
-            'position' => 'required|string|max:255',
-            'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif|max:8192',
+            'email' => 'required|string|max:255|email|unique:users,email,' . $id,
+            'password' => 'required|string|max:255|confirmed|min:8',
         ]);
-        $update = OurTeam::findOrFail($id);
+        $update =  User::findOrFail($id);
         $update->email =  $request->email;
         $update->name =  $request->name;
-        $update->position =  $request->position;
-        $update->image = isset($request->image) ?  $request->image->store('uploads', 'public') : $update->image;
+        $update->password =  Hash::make($request->password);
         $update->created_by =  auth()->id();
-        $update->update();
+        $update->save();
 
-        return redirect()->back()->withSuccess('Update Member Successfully !');
+        return redirect()->back()->withSuccess('Added User Successfully !');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\OurTeam  $ourTeam
+     * @param  \App\UserCustem  $userCustem
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        OurTeam::findOrFail($id)->delete();
-        return redirect()->back()->withSuccess('Remove Member Successfully !');
+        User::findOrFail($id)->delete();
+        return redirect()->back()->withSuccess('Remove Admin Successfully !');
     }
 }

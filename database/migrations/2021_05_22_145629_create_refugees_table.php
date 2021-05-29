@@ -29,6 +29,8 @@ class CreateRefugeesTable extends Migration
             $table->text('zanyarytr');
             $table->string('document');
             $table->boolean('state')->default(0);
+            $table->unsignedBigInteger('created_by');
+            $table->foreign('created_by')->references('id')->on('users');
             $table->timestamps();
         });
     }

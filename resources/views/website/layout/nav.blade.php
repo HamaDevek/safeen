@@ -11,8 +11,7 @@
             <p class="nav-text"></p>
             <ul class="right chevron">
                 <li><a href="{{route('index')}}">Home</a></li>
-                <li><a href="{{route('form')}}">Iam Refugee</a></li>
-
+                <li><a href="{{route('login')}}">Login</a></li>
             </ul>
         </div>
     </nav>

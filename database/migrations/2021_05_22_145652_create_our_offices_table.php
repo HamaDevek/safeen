@@ -19,6 +19,8 @@ class CreateOurOfficesTable extends Migration
             $table->string('address');
             $table->string('link_googl_map');
             $table->string('image');
+            $table->unsignedBigInteger('created_by');
+            $table->foreign('created_by')->references('id')->on('users');
             $table->timestamps();
         });
     }

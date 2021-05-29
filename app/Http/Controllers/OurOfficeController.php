@@ -46,6 +46,7 @@ class OurOfficeController extends Controller
         $insert->address =  $request->address;
         $insert->link_googl_map =  $request->link_googl_map;
         $insert->image =  $request->image->store('uploads', 'public');
+        $insert->created_by =  auth()->id();
         $insert->save();
 
         return redirect()->back()->withSuccess('Added Location Successfully !');
@@ -93,6 +94,7 @@ class OurOfficeController extends Controller
         $update->address =  $request->address;
         $update->link_googl_map =  $request->link_googl_map;
         $update->image = isset($request->image) ?  $request->image->store('uploads', 'public') : $update->image;
+        $update->created_by =  auth()->id();
         $update->update();
 
         return redirect()->back()->withSuccess('Update Location Successfully !');

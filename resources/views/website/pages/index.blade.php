@@ -57,44 +57,38 @@
 
 
 <section class="section background-white">
-    <div class="line">
-        <h2 class="text-size-50 text-center">Our Stats</h2>
-        <hr class="break-small background-primary break-center">
-        <div class="margin margin-top-bottom-50">
-            <div class="s-12 m-12 l-3">
-                <div class="block">
-                    <div class="count-to">
-                        <span class="timer h1 text-size-50">100</span>
-                        <p class="h1 text-size-20 margin-top-10 text-dark text-thin">Camp</p>
+    <center>
+        <div class="line">
+            <h2 class="text-size-50 text-center">Our Stats</h2>
+            <hr class="break-small background-primary break-center">
+            <div class="margin margin-top-bottom-50">
+                <div class="s-12 m-12 l-3">
+                    <div class="block">
+                        <div class="count-to">
+                            <span class="timer h1 text-size-50">{{count($refugee)}}</span>
+                            <p class="h1 text-size-20 margin-top-10 text-dark text-thin">Refugee</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="s-12 m-12 l-3">
-                <div class="block">
-                    <div class="count-to">
-                        <span class="timer h1 text-size-50">5000</span>
-                        <p class="h1 text-size-20 margin-top-10 text-dark text-thin">Refugee</p>
+                <div class="s-12 m-12 l-3">
+                    <div class="block">
+                        <div class="count-to">
+                            <span class="timer h1 text-size-50">{{count($location)}}</span>
+                            <p class="h1 text-size-20 margin-top-10 text-dark text-thin">Our Office</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="s-12 m-12 l-3">
-                <div class="block">
-                    <div class="count-to">
-                        <span class="timer h1 text-size-50">13</span>
-                        <p class="h1 text-size-20 margin-top-10 text-dark text-thin">Companis Support</p>
-                    </div>
-                </div>
-            </div>
-            <div class="s-12 m-12 l-3">
-                <div class="block">
-                    <div class="count-to">
-                        <span class="timer h1 text-size-50">5</span>
-                        <p class="h1 text-size-20 margin-top-10 text-dark text-thin">Countris</p>
+                <div class="s-12 m-12 l-3">
+                    <div class="block">
+                        <div class="count-to">
+                            <span class="timer h1 text-size-50">{{count($location)}}</span>
+                            <p class="h1 text-size-20 margin-top-10 text-dark text-thin">Our Team Member</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </center>
 </section>
 
 <hr class="break margin-top-bottom-0">

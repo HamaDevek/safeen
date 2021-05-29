@@ -6,9 +6,9 @@
 <div class="row">
     <div class="col">
         <div class="card">
-            <div class="card-body">
+            <div class="card-body" style="overflow-x:auto;">
                 <h5 class="card-title">Rejected Refugee</h5>
-                <table class="table">
+                <table id="zero-conf" class="display" style="width:100%">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -62,11 +62,19 @@
                                             <center><a class="dropdown-item" target="_blank"
                                                     href="{{asset('storage/'.$value->document)}}">Document</a></center>
                                         </li>
-                                        @endif
                                         <li>
+                                            <form action="{{route('refugee.destroy',$value->id)}}" method="post">@csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="dropdown-item">Delete</button>
+                                            </form>
+                                        </li>
+
+
+                                        @endif
+                                        {{-- <li>
                                             <center><a class="dropdown-item"
                                                     href="{{route('refugee.state',['id'=>$value->id,'state'=>1])}}">Accept</a>
-                                            </center>
+                                        </center>
 
                                         </li>
                                         <li>
@@ -74,7 +82,7 @@
                                                     href="{{route('refugee.state',['id'=>$value->id,'state'=>2])}}">Reject</a>
                                             </center>
 
-                                        </li>
+                                        </li> --}}
                                     </ul>
                                 </div>
                             </td>

@@ -12,15 +12,22 @@
         <li>
             <a href="{{route('refugee.index')}}"><i data-feather="inbox"></i>Refugee Request</a>
         </li>
-        <li>
+        {{-- <li>
             <a href="{{route('refugee.accepted')}}"><i data-feather="user-check"></i>Accepted Refugee</a>
         </li>
         <li>
             <a href="{{route('refugee.rejected')}}"><i data-feather="user-x"></i>Rejected Refugee</a>
-        </li>
+        </li>--}}
         <li>
             <a href="{{route('ouroffice.index')}}"><i data-feather="map-pin"></i>Our Location</a>
         </li>
+        <li>
+            <a href="{{route('user.index')}}"><i data-feather="user"></i>Admins</a>
+        </li>
+        <li>
+            <a href="{{route('user.edit',auth()->id())}}"><i data-feather="settings"></i>Setting</a>
+        </li>
+        <br>
         <li>
             <form action="{{ route('logout') }}" method="POST" id="logout" class="d-none">
                 @csrf

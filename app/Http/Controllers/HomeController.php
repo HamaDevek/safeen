@@ -19,7 +19,8 @@ class HomeController extends Controller
     {
         $team = OurTeam::all();
         $location = OurOffice::all();
-        return view('website.pages.index')->with(['team' => $team, 'location' => $location]);
+        $refugee = Refugee::all();
+        return view('website.pages.index')->with(['team' => $team, 'location' => $location, 'refugee' => $refugee]);
         // return view('dashboard.pages.index');
     }
     public function indexDashboard()
@@ -63,6 +64,7 @@ class HomeController extends Controller
         $insert->xawankary =  $request->xawankary == 'on' ? 1 : 0;
         $insert->zanyarytr =  $request->zanyarytr;
         $insert->document =  $request->document->store('uploads', 'public');
+        $insert->created_by =  auth()->id();
         $insert->save();
 
         return redirect()->back()->withSuccess('Send request succesfully !');
