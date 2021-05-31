@@ -5,7 +5,7 @@
     <div class="col">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Update User</h5>
+                <h5 class="card-title">Update Admin</h5>
                 @include('dashboard.layout.message')
                 <form action="{{route('user.update',$single->id)}}" method="POST" enctype="multipart/form-data">
                     @csrf

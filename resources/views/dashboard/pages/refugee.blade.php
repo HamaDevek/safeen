@@ -7,7 +7,7 @@
     <div class="col">
         <div class="card">
             <div class="card-body" style="overflow-x:auto;">
-                <h5 class="card-title">Rejected Refugee</h5>
+                <h5 class="card-title">All Refugee</h5>
                 <table id="zero-conf" class="display" style="width:100%">
                     <thead>
                         <tr>
